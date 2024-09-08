@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>FreeLax</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body> 
+    <div class="navbar">
+        <div class="logo">
+            <h1>Free<span>Lax.</span></h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu();">
+            <i class="fas fa-bars"></i> <!-- Hamburger icon from Font Awesome -->
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropbtn">Test <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="skillTest.html">Attempt Test</a>
+                      <a href="#">Test LeaderBoard</a>
+                      <a href="#">Test Results</a>
+                  </div>
+              </li>
+              <!-- Teams Dropdown -->
+              <li class="dropdown">
+                  <a href="#services" class="dropbtn">Teams <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="showteam.html">Teams</a>
+                      <a href="teamcreate.html">Create Team</a>
+                      <a href="jointeam.html">Join Team</a>
+                  </div>
+              </li>
+              <!-- Communities Dropdown -->
+              <li class="dropdown">
+                  <a href="#contact" class="dropbtn">Communities <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="#">My Community</a>
+                      <a href="#">Create Community</a>
+                      <a href="#">Join Community</a>
+                  </div>
+              </li>
+            </ul>
+        </nav>
+        <div class="profile">
+          <a href="freelancer.html"><img src="img/DP.jpg"  alt="profile pic"></a>
+        </div>
+    </div>
+    
+    <div class="contents">
+        <div class="showCase">
+            <div class="right fade-in-left">
+                <img src="img/header.png" alt="">
+            </div>
+            <div class="left fade-in-right">
+                <h2>Elevate Your Freelance Career</h2>
+                <p>Showcase your skills, connect with leading clients, and take your freelance career
+                     to new heights with our innovative platform.</p>
+                <button class="start_btn" onclick="window.location.href='FreelanceSearchpage.html';">Let's Go</button>
+            </div>
+        </div>
+    </div>
+    
+    <section class="how-can-we-help">
+        <h2>How can we help?</h2>
+        <p>No matter what you need, our platform has the tools and resources to help you get it done.</p>
+        <div class="services">
+            <div class="service" onclick="openModal('service-1')" >
+                <img src="img/big data.jpg" alt="Service 1">
+                <a href="#"><h3>How to start Freelancing</h3></a>
+                <p>Starting freelancing can be a rewarding way to build your career. Here are three key steps to get started</p>
+                <a href="#">Read more</a>
+            </div>
+            <div class="service" onclick="openModal('service-2')">
+                <img src="img/machine learning.jpg" alt="Service 2">
+                <a href="#"><h3>Build your team</h3></a>
+                <p>Connect with top talent and scale your team in minutes.</p>
+                <a href="#">Read more</a>
+            </div>
+            <div class="service" onclick="openModal('service-3')">
+                <img src="img/full stack image.png" alt="Service 3">
+                <a href="#"><h3>How to Start the Java-project</h3></a>
+                <p>Learn how to start Java project from our java experties.</p>
+                <a href="#">Read more</a>
+            </div>
+            <div class="service" onclick="openModal('service-4')">
+                <img src="img/quantum comuting.jpeg" alt="Service 4">
+                <a href="#"><h3>How to Start the project</h3></a>
+                <p>Learn how to start Java project from our java experties.</p>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore-innovations">
+      <h2>Explore Innovations</h2>
+      <div class="innovations">
+          <div class="innovation" onclick="openModal('talent-pools')">
+              <img src="img/Screenshot 2024-09-02 150125.png" alt="Innovation 1">
+              <h3>Fly Easy</h3>
+              <p>Online Flight Booking System using Java</p>
+          </div>
+          <div class="innovation" onclick="openModal('project-catalog')">
+              <img src="img/project2.jpg" alt="Innovation 2">
+              <h3>EXpense Tracking</h3>
+              <p>Managing personal finances effectively is a crucial skill in today's fast-paced world.</p>
+          </div>
+          <div class="innovation" onclick="openModal('platform-api')">
+              <img src="img/project3.jpg" alt="Innovation 3">
+              <h3>APSRTS LIVE BUS TRACKING</h3>
+              <p>A new era to convinience</p>
+          </div>
+          <div class="innovation" onclick="openModal('project-bot')">
+              <img src="img/Screenshot 2024-06-10 173400.png" alt="Innovation 4">
+              <h3>RouteMaster</h3>
+              <p>Logistics management System for packers and movers using java springboot</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div id="modal-body"></div>
+      </div>
+  </div>
+
+
+    <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Users Say</h2>
+      <div class="testimonials-slider">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"This platform has transformed the way I find and work with clients. It's incredibly user-friendly and has opened up so many opportunities for me!"</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="img/Screenshot 2024-08-31 135705.png" alt="Freelancer 1" class="author-image">
+            <div class="author-info">
+              <h4 class="author-name">Hemanth</h4>
+              <span class="author-role">Freelancer</span>
+              <div class="author-rating">
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"Finding the right freelancer has never been easier. The platform's features make it simple to manage projects and collaborate effectively."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="img/deep.png" alt="Employer 1" class="author-image">
+            <div class="author-info">
+              <h4 class="author-name">Mani deep</h4>
+              <span class="author-role">Freelancer</span>
+              <div class="author-rating">
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"The platform's features make it simple to manage projects and collaborate effectively."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="img/yash.jpg" alt="Employer 1" class="author-image">
+            <div class="author-info">
+              <h4 class="author-name">Yaswanth</h4>
+              <span class="author-role">Employer</span>
+              <div class="author-rating">
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add more testimonials as needed -->
+      </div>
+    </div>
+
+    <div class="container-review">
+      <h2 class="section-title">Submit Your Review</h2>
+      <form class="review-form">
+          <div class="form-group">
+              <label for="userName">Name</label>
+              <input type="text" id="userName" name="userName" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+              <label for="reviewContent">Review</label>
+              <textarea id="reviewContent" name="reviewContent" rows="4" required placeholder="Write your review"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="userRating">Rating</label>
+              <select id="userRating" name="userRating" required>
+                  <option value="" disabled selected>Select rating</option>
+                  <option value="1">1 Star</option>
+                  <option value="2">2 Stars</option>
+                  <option value="3">3 Stars</option>
+                  <option value="4">4 Stars</option>
+                  <option value="5">5 Stars</option>
+              </select>
+          </div>
+          <button type="submit" class="submit-button">Submit</button>
+      </form>
+  </div>
+  </section>
+
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#about-us">About Us</a>
+        <a href="#contact-us">Contact Us</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-of-service">Terms of Service</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://facebook.com" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Subscribe to Our Newsletter</h4>
+        <form action="/subscribe" method="post">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+  
+
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+
+  // Data for the modal content
+const innovationsData = {
+  'talent-pools': {
+      title: 'FlyEasy',
+      content: `
+          <p>Online flight booking service</p>
+          <p>Key Benefits:</p>
+          <ul>
+              <li>Transparent Pricing: Enjoy peace of mind with all costs displayed upfront and no hidden fees. </li>
+              <li>Advanced Features: Benefit from real-time flight tracking, seamless seat selection, and the ability to pre-book customized in-flight meals. </li>
+              <li>User-Friendly Interface: Navigate effortlessly with our intuitive and easy-to-use platform. </li>
+              <li>Secure Authentication: Experience robust user security with comprehensive OAuth integration. </li>
+          </ul>
+          <button class="connect">Connect</button>
+      `
+  },
+  'project-catalog': {
+      title: 'Expense Tracker',
+      content: `
+          <p>Our project is an Expense Tracker application designed to help users efficiently manage their finances.</p>
+          <p>Key Features:</p>
+          <ul>
+              <li>The application allows users to record and categorize their expenses and income, providing detailed insights through visualizations such as pie charts, bar graphs, and line charts. </li>
+              <li>Users can set reminders for upcoming expenses and generate monthly reports to analyze their spending habits.</li>
+              <li>The backend is powered by Express.js and Node.js, with MySQL for data storage, while the frontend uses HTML, CSS, and JavaScript.</li>
+          </ul>
+          <button class="connect">Connect</button>
+      `
+  },
+  'platform-api': {
+      title: 'APSRTC LIVE BUS TRACKING :',
+      content: `
+          <p>This presentation introduces the concept of real-time bus tracking for the Andhra 
+Pradesh State Road Transport Corporation (APSRTC). We will explore the current 
+system, its limitations, and propose a new, advanced live tracking system.</p>
+          <p>Key Features:</p>
+          <ul>
+              <li>The current system relies on static, prescheduled bus arrival times displayed at 
+bus stops. This system lacks real-time 
+updates and relies on pre-defined 
+timetables, often leading to inaccuracies.</li>
+              <li>Passengers mainly rely on printed 
+timetables or inquiries at bus stations for 
+information. This can be inconvenient and 
+inefficient, especially during peak hours or 
+in unfamiliar locations.</li>
+              <li>The system lacks advanced features like 
+live bus location tracking, estimated time 
+of arrival (ETA) updates, or route 
+deviations, which could significantly 
+enhance the passenger experience</li>
+          </ul>
+          <button class="connect">Connect</button>
+      `
+  },
+  'project-bot': {
+      title: 'RouteMaster',
+      content: `
+          <p>A logistics Management System that uses for packers and movers</p>
+          <p>Feature:</p>
+          <ul>
+              <li>Implemented performance enhancements and analytics features, resulting in faster response times and detailed delivery metrics
+tracking.</li>
+              <li>Implemented performance enhancements and analytics features, resulting in faster response times and detailed delivery metrics
+tracking.</li>
+              <li>Developed and optimized RESTful APIs using Spring Boot for parcel delivery operations and designed efficient database schemas
+for improved data management.</li>
+          </ul>
+          <button class="connect">Connect</button>
+      `
+  },
+
+  'service-1': {
+      title: 'How to start Freelancing',
+      content: `
+          <p></p>
+          <p>Key Benefits:</p>
+          <ul>
+              <li>Determine what services you can offer based on your skills and interests. Focus on a specific niche where you can excel and build a portfolio to showcase your work.</li>
+              <li>Set up a professional profile on freelancing platforms like FreeLax, Upwork, Fiverr, or LinkedIn. Create a personal website or portfolio to display your work, experience, and testimonials.</li>
+              <li>: Reach out to your network, join relevant online communities, and actively search for freelance opportunities. Respond to job postings and submit proposals tailored to the client’s needs.</li>
+              <li>Starting freelancing can be a rewarding way to build your career.</li>
+          </ul>
+          <button class="connect" >Connect</button>
+      `
+  },
+
+  'service-2': {
+      title: 'How to build team',
+      content: `
+          <p></p>
+          <p>How to select</p>
+          <ul>
+              <li>Clearly outline the skills and expertise needed for your project. Identify the roles that freelancers will fill, such as developers, designers, writers, or marketers, based on the specific needs of the project.</li>
+              <li> Use platforms like Upwork, Toptal, or LinkedIn to find qualified freelancers. Review their portfolios, check references, and conduct interviews to ensure they have the skills and experience required.</li>
+              <li>Reach out to your network, join relevant online communities, and actively search for freelance opportunities. Respond to job postings and submit proposals tailored to the client’s needs.</li>
+              <li>Set up effective communication channels and tools like Slack, Trello, or Asana for project management. Establish expectations for regular updates, deadlines, and deliverables to ensure smooth collaboration among team members.</li>
+          </ul>
+          <button class="connect">Connect</button>
+      `
+  },
+
+  'service-4': {
+      title: 'How to start project',
+      content: `
+          <p></p>
+          <p>How to select</p>
+          <ul>
+              <li> Clearly outline the project's goals, deliverables, timelines, and success criteria. Make sure all stakeholders agree on the project's scope and understand the objectives.</li>
+              <li> Identify the skills and resources needed for the project. Assemble a team with the necessary expertise, and ensure they have access to the tools and resources required to complete the project successfully.</li>
+              <li>Create a project plan that includes tasks, milestones, timelines, and responsibilities. Use project management tools like Gantt charts, timelines, or task lists to organize and track progress.</li>
+              <li>Set up communication channels for regular updates and collaboration. Identify potential risks and develop strategies to mitigate them. Ensure everyone knows the escalation process for addressing issues.</li>
+          </ul>
+          <button class="connect">Connect</button>
+      `
+  },
+
+  'service-3': {
+      title: 'How to start java Project',
+      content: `
+          <p></p>
+          <p>How to start</p>
+          <ul>
+              <li>Install the Java Development Kit (JDK) and choose an Integrated Development Environment (IDE) like IntelliJ IDEA, Eclipse, or NetBeans. Configure your IDE with the necessary plugins and tools, such as Maven or Gradle for project management.</li>
+              <li> Create a clear project structure by organizing your source files, resources, and configuration files. If using Maven or Gradle, define your project dependencies in the pom.xml or build.gradle file, respectively.</li>
+              <li>Set up version control using Git to track changes and collaborate with others. Create a repository on platforms like GitHub or GitLab, and commit your initial project structure and files to ensure you can manage versions and contributions efficiently.</li>
+              <li>Outline the core features and functionality of your project. Start by implementing the basic structure of your application, including classes, methods, and interfaces. Test your code as you develop, using JUnit or other testing frameworks to ensure your implementation is correct.</li>
+          </ul>
+          <button class="connect">Connect</button>
+      `
+  }
+};
+
+// Function to open the modal
+function openModal(innovationKey) {
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modal-body');
+  
+  // Set the content based on the innovationKey
+  modalBody.innerHTML = `
+      <h2>${innovationsData[innovationKey].title}</h2>
+      ${innovationsData[innovationKey].content}
+  `;
+  
+  // Display the modal
+  modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
+}
+
+// Close the modal if the user clicks outside of the modal content
+window.onclick = function(event) {
+  const modal = document.getElementById('modal');
+  if (event.target == modal) {
+      modal.style.display = 'none';
+  }
+}
+
+</script>
+</body>
+</html>

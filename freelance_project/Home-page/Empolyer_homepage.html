@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="employer_homepage.css">
+    <title>FreeLax</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Free<span>Lax.</span></h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu();">
+            <i class="fas fa-bars"></i> <!-- Hamburger icon from Font Awesome -->
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+              <!-- Teams Dropdown -->
+              <li class="dropdown">
+                  <a href="#services" class="dropbtn">Teams <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="#">Teams</a>
+                      <a href="#">Join Team</a>
+                  </div>
+              </li>
+              <!-- Communities Dropdown -->
+              <li class="dropdown">
+                  <a href="#contact" class="dropbtn">Communities <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="#">My Community</a>
+                      <a href="#">Create Community</a>
+                      <a href="#">Join Community</a>
+                  </div>
+              </li>
+            </ul>
+        </nav>
+        <div class="profile">
+          <a href="employee.html"><img src="img/DP.jpg"  alt="profile pic"></a>
+        </div>
+    </div>
+
+    <div class="contents">
+        <div class="showCase">
+            <div class="right fade-in-left">
+                <img src="img/emp_head.png" alt="">
+            </div>
+            <div class="left fade-in-right">
+                <h2>Find the Perfect Talent for Your Projects</h2>
+                <p>Post a job, review expert profiles, and hire the perfect freelancer 
+                    to bring your vision to life.</p>
+                <button class="start_btn" onclick="window.location.href='Job/jobpost.html';">Post a Job</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="explore-innovations">
+      <h2 class="section-title">Explore the Innovations From Our <br>Freelancers</h2>
+        <h2>Explore Innovations</h2>
+        <div class="innovations">
+            <div class="innovation" onclick="openModal('talent-pools')">
+                <img src="img/project 4.png" alt="Innovation 1">
+                <h3>FilmAnalytics</h3>
+                <p>Ready to spice up your movie nights.Unlock movie recommendations based on your interests!Check out my dashboard in action in this video..</p>
+            </div>
+            <div class="innovation" onclick="openModal('project-catalog')">
+                <img src="img/project5.jpg" alt="Innovation 2">
+                <h3>Travel planner website</h3>
+                <p>Smart travel application using react native.</p>
+            </div>
+            <div class="innovation" onclick="openModal('platform-api')">
+                <img src="img/project 6.jpg" alt="Innovation 3">
+                <h3>Online Zoo Management</h3>
+                <p>Online Zoo management system.</p>
+            </div>
+            <div class="innovation" onclick="openModal('project-bot')">
+                <img src="img/project 7.jpg" alt="Innovation 4">
+                <h3>Crime prevention</h3>
+                <p>Use our AI-powered bot to help you find the right talent for your projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Users Say</h2>
+      <div class="testimonials-slider">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"This platform has transformed the way I find and work with clients. It's incredibly user-friendly and has opened up so many opportunities for me!"</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="img/Screenshot 2024-08-31 135705.png" alt="Freelancer 1" class="author-image">
+            <div class="author-info">
+              <h4 class="author-name">Hemanth</h4>
+              <span class="author-role">Freelancer</span>
+              <div class="author-rating">
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"Finding the right freelancer has never been easier. The platform's features make it simple to manage projects and collaborate effectively."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="img/yash.jpg" alt="Employer 1" class="author-image">
+            <div class="author-info">
+              <h4 class="author-name">Yaswanth</h4>
+              <span class="author-role">Employer</span>
+              <div class="author-rating">
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"Finding the right freelancer has never been easier. The platform's features make it simple to manage projects and collaborate effectively."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="img/yash.jpg" alt="Employer 1" class="author-image">
+            <div class="author-info">
+              <h4 class="author-name">Yaswanth</h4>
+              <span class="author-role">Employer</span>
+              <div class="author-rating">
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+                <i class="star-icon">&#9733;</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add more testimonials as needed -->
+      </div>
+    </div>
+
+    <div class="container-review">
+      <h2 class="section-title">Submit Your Review</h2>
+      <form class="review-form">
+          <div class="form-group">
+              <label for="userName">Name</label>
+              <input type="text" id="userName" name="userName" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+              <label for="reviewContent">Review</label>
+              <textarea id="reviewContent" name="reviewContent" rows="4" required placeholder="Write your review"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="userRating">Rating</label>
+              <select id="userRating" name="userRating" required>
+                  <option value="" disabled selected>Select rating</option>
+                  <option value="1">1 Star</option>
+                  <option value="2">2 Stars</option>
+                  <option value="3">3 Stars</option>
+                  <option value="4">4 Stars</option>
+                  <option value="5">5 Stars</option>
+              </select>
+          </div>
+          <button type="submit" class="submit-button">Submit</button>
+      </form>
+  </div>
+  </section>
+
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#about-us">About Us</a>
+        <a href="#contact-us">Contact Us</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-of-service">Terms of Service</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://facebook.com" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Subscribe to Our Newsletter</h4>
+        <form action="/subscribe" method="post">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Data for the modal content
+const innovationsData = {
+    'talent-pools': {
+        title: 'Talent Pools',
+        content: `
+            <p>Star Performance: Dive into actors' filmography, ratings, and more!</p>
+            <p>Key Benefits:</p>
+            <ul>
+                <li>Top 20 Movie Runtimes: Bar graph showcasing the most intriguing durations.</li>
+                <li>Movies Released Over the Years: A journey through the cinematic timeline.</li>
+                <li>Movie Certificates: Pie chart breakdown for a visual feast.</li>
+                <li>Genre Insights: Explore genres based on movie count, gross, IMDb rating, and votes.</li>
+            </ul>
+        `
+    },
+    'project-catalog': {
+        title: 'Travel planner website',
+        content: `
+            <p>Smart travel application using react native</p>
+            <p>Key Features:</p>
+            <ul>
+                <li>Travel in the world where you want</li>
+                <li>We provides the best budget friendly travelling options with ypur families</li>
+                <li>User-frienly website makes you feel comfort for booking your tour</li>
+            </ul>
+        `
+    },
+    'platform-api': {
+        title: 'Online Zoo Management',
+        content: `
+            <p>Developed a online Zoo management system for all paticular zoos in india</p>
+            <p>Site Highlights:</p>
+            <ul>
+                <li>Book your zoo entry tickets where you want</li>
+                <li>Detail of the Zoo including geo-map locations</li>
+                <li>Advance pre-food booking system</li>
+            </ul>
+        `
+    },
+    'project-bot': {
+        title: 'Project Bot',
+        content: `
+            <p>The Project Bot leverages AI to recommend the best freelancers for your project, based on their skills, experience, and past performance, ensuring that you always have the right person for the job.</p>
+            <p>How It Works:</p>
+            <ul>
+                <li>Analyze project requirements</li>
+                <li>Match with top freelancers</li>
+                <li>Provide ongoing support during the project</li>
+            </ul>
+        `
+    }
+};
+
+// Function to open the modal
+function openModal(innovationKey) {
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    
+    // Set the content based on the innovationKey
+    modalBody.innerHTML = `
+        <h2>${innovationsData[innovationKey].title}</h2>
+        ${innovationsData[innovationKey].content}
+    `;
+    
+    // Display the modal
+    modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+}
+
+// Close the modal if the user clicks outside of the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+  </script>
+  
+</body>
+</html>

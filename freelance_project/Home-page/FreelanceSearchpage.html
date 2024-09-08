@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Job Search</title>
+    <link rel="stylesheet" href="FreelanceSearchpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="FreelanceSearchpage.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Free<span>Lax.</span></h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu();">
+            <i class="fas fa-bars"></i> <!-- Hamburger icon from Font Awesome -->
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropbtn">Test <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="#">Attempt Test</a>
+                      <a href="#">Test LeaderBoard</a>
+                      <a href="#">Test Results</a>
+                  </div>
+              </li>
+              <!-- Teams Dropdown -->
+              <li class="dropdown">
+                  <a href="#services" class="dropbtn">Teams <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="Teams/showteam.html">Teams</a>
+                      <a href="Teams/teamcreate.html">Create Team</a>
+                      <a href="Teams/jointeam.html">Join Team</a>
+                  </div>
+              </li>
+              <!-- Communities Dropdown -->
+              <li class="dropdown">
+                  <a href="#contact" class="dropbtn">Communities <i class="fa-solid fa-angle-down"></i></a>
+                  <div class="dropdown-content">
+                      <a href="#">My Community</a>
+                      <a href="#">Create Community</a>
+                      <a href="#">Join Community</a>
+                  </div>
+              </li>
+            </ul>
+        </nav>
+        <div class="profile">
+          <a href="Dashboard/freelancer.html"><img src="img/Screenshot 2024-08-31 135705.png"  alt="profile pic"></a>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Freelancer Job Search</h1>
+            <p>Find the perfect job that matches your skills and interests.</p>
+        </header>
+        <main>
+            <section class="search-container">
+                <div class="search-form-container">
+                    <form id="search-form">
+                        <div class="search-inputs">
+                            <input type="text" id="search-query" placeholder="Job title, skills, or keywords" required>
+                            <select id="job-category">
+                                <option value="">Category</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="design">Design</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="writing">Writing</option>
+                                <option value="consulting">Consulting</option>
+                                <!-- Add more categories as needed -->
+                            </select>
+                            <input type="text" id="location" placeholder="Location (optional)">
+                            <input type="number" id="min-salary" placeholder="Min Salary">
+                            <input type="number" id="max-salary" placeholder="Max Salary">
+                            <select id="experience-level">
+                                <option value="">Experience Level</option>
+                                <option value="entry">Entry</option>
+                                <option value="mid">Mid</option>
+                                <option value="senior">Senior</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="recommended-jobs">
+                <h2>Recommended Jobs</h2>
+                <div id="recommended-job-list" class="job-list">
+                    <!-- Recommended jobs will be dynamically inserted here -->
+                </div>
+            </section>
+            
+
+            <section class="search-results">
+                <div id="job-list" class="job-list">
+                    <!-- Job results will be dynamically inserted here -->
+                </div>
+            </section>
+        </main>
+       
+    <!-- Job Details Modal -->
+    <div id="job-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="job-details">
+                <!-- Job details will be dynamically inserted here -->
+            </div>
+            <button id="apply-btn" class="btn btn-primary">Apply Now</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-links">
+            <a href="#about-us">About Us</a>
+            <a href="#contact-us">Contact Us</a>
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-of-service">Terms of Service</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://facebook.com" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Subscribe to Our Newsletter</h4>
+            <form action="/subscribe" method="post">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </footer>
+      
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Login & Registration</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-wrapper">
+            <div class="form-container">
+                <div class="form-card" id="login-form">
+                    <h2>Freelancer Sign In</h2>
+                    <form id="freelancerLoginForm">
+                        <div class="input-group">
+                            <input type="text" id="freelancerLoginUsername" placeholder="Username" required>
+                            <i class="ri-mail-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="freelancerPassword" placeholder="Password" required>
+                            <i class="ri-lock-line icon"></i>
+                        </div>
+                        <button type="submit" class="btn">Sign In</button>
+                    </form>
+                    <p class="toggle-text">Don't have an account? <button id="show-register">Register</button></p>
+                </div>
+                <div class="form-card" id="register-form">
+                    <h2>Freelancer Register</h2>
+                    <form id="freelancerRegisterForm">
+                        <div class="input-group">
+                            <input type="text" id="freelancerName" placeholder="Full Name" required>
+                            <i class="ri-user-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="freelancerRegisterEmail" placeholder="Email" required>
+                            <i class="ri-mail-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="freelancerRegisterPassword" placeholder="Password" required>
+                            <i class="ri-lock-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="freelancerConfirmPassword" placeholder="Confirm Password" required>
+                            <i class="ri-lock-line icon"></i>
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+                    <p class="toggle-text">Already have an account? <button id="show-login">Sign In</button></p>
+                </div>
+            </div>
+            <div class="social-auth-container">
+                <h2>Or sign in with</h2>
+                <div class="social-buttons">
+                    <button class="social-btn google" id="google-signin">
+                        <i class="ri-google-fill icon"></i>
+                        Google
+                    </button>
+                    <button class="social-btn github" id="github-signin">
+                        <i class="ri-github-fill icon"></i>
+                        GitHub
+                    </button>
+                    <button class="social-btn linkedin" id="linkedin-signin">
+                        <i class="ri-linkedin-fill icon"></i>
+                        LinkedIn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("freelancerLoginForm");
+    const registerForm = document.getElementById("freelancerRegisterForm");
+
+    // Handle the registration form submission
+    registerForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById("freelancerName").value;
+        const email = document.getElementById("freelancerRegisterEmail").value;
+        const password = document.getElementById("freelancerRegisterPassword").value;
+        const confirmPassword = document.getElementById("freelancerConfirmPassword").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:8080/freelancer/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password, email }),
+            });
+
+            if (response.ok) {
+                alert("Registration successful! Please log in.");
+                // Redirect to login page or toggle to the login form
+                document.getElementById("show-login").click();
+            } else {
+                const errorData = await response.json();
+                alert("Registration failed: " + errorData.message);
+            }
+        } catch (error) {
+            console.error("Error during registration:", error);
+        }
+    });
+
+    // Handle the login form submission
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById("freelancerLoginUsername").value;
+        const password = document.getElementById("freelancerPassword").value;
+
+        try {
+            const response = await fetch("http://localhost:8080/api/auth/login/freelancer", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            if (response.ok) {
+                // Redirect to the freelancer homepage on successful login
+                window.location.href = "Freelancer_hompage.html";
+            } else {
+                const errorData = await response.json();
+                alert("Login failed: " + errorData.message);
+            }
+        } catch (error) {
+            console.error("Error during login:", error);
+        }
+    });
+
+    // Toggle between login and register forms
+    document.getElementById("show-register").addEventListener("click", () => {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("register-form").style.display = "block";
+    });
+
+    document.getElementById("show-login").addEventListener("click", () => {
+        document.getElementById("login-form").style.display = "block";
+        document.getElementById("register-form").style.display = "none";
+    });
+});
+    </script>
+</body>
+</html>

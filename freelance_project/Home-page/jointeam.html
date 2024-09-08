@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teamstyle.css">
+    <title>Join-Team</title>
+</head>
+<body>
+    
+    <header>
+        <h1>FreeLax - Team Management</h1>
+    </header>
+
+    <main>
+        <section id="add-team-member">
+            <h2>Add a Team Member</h2>
+            <form id="addTeamMemberForm">
+                <label for="teamId">Team ID:</label>
+                <input type="number" id="teamId" name="teamId" required>
+
+                <label for="freelancerId">Freelancer ID:</label>
+                <input type="number" id="freelancerId" name="freelancerId" required>
+
+                <label for="role">Role:</label>
+                <input type="text" id="role" name="role" required>
+
+                <button type="submit">Add Member</button>
+            </form>
+            <div id="addTeamMemberResult"></div>
+        </section>
+    </main>
+    <script src="team.js"></script>
+</body>
+</html>

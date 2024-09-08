@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Login & Registration</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- <script src="login.js" defer></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        body {
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, rgb(194, 237, 197));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="auth-wrapper">
+            <div class="form-container">
+                <div class="form-card" id="login-form">
+                    <h2>Company Sign In</h2>
+                    <form id="companyLoginForm">
+                        <div class="input-group">
+                            <input type="text" id="username" placeholder="UserName" required>
+                            <i class="ri-mail-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="companyPassword" placeholder="Password" required>
+                            <i class="ri-lock-line icon"></i>
+                        </div>
+                        <button type="submit" class="btn_emp">Sign In</button>
+                    </form>
+                    <p class="toggle-text">Don’t have an account? <button id="show-register">Register</button></p>
+                </div>
+                <div class="form-card" id="register-form">
+                    <h2>Company Register</h2>
+                    <form id="companyRegisterForm" method="post">
+                        <div class="input-group">
+                            <input type="text" id="companyName" placeholder="UserName" required>
+                            <i class="ri-building-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="companyRegisterEmail" placeholder="Email" required>
+                            <i class="ri-mail-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="companyRegisterPassword" placeholder="Password" required>
+                            <i class="ri-lock-line icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="companyConfirmPassword" placeholder="Confirm Password" required>
+                            <i class="ri-lock-line icon"></i>
+                        </div>
+                        <button type="submit" value="submit" class="btn_emp">Register</button>
+                    </form>
+                    <p class="toggle-text">Already have an account? <button id="show-login">Sign In</button></p>
+                </div>
+            </div>
+            <div class="social-auth-container">
+                <h2>Or sign in with</h2>
+                <div class="social-buttons">
+                    <button class="social-btn google" id="google-signin">
+                        <i class="ri-google-fill icon"></i>
+                        Google
+                    </button>
+                    <button class="social-btn github" id="github-signin">
+                        <i class="ri-github-fill icon"></i>
+                        GitHub
+                    </button>
+                    <button class="social-btn linkedin" id="linkedin-signin">
+                        <i class="ri-linkedin-fill icon"></i>
+                        LinkedIn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    // Form elements
+    const loginForm = document.getElementById("companyLoginForm");
+    const registerForm = document.getElementById("companyRegisterForm");
+
+    // Toggle between login and register forms
+    document.getElementById("show-register").addEventListener("click", () => {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("register-form").style.display = "block";
+    });
+
+    document.getElementById("show-login").addEventListener("click", () => {
+        document.getElementById("login-form").style.display = "block";
+        document.getElementById("register-form").style.display = "none";
+    });
+
+    // Login Form Submission
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("companyPassword").value;
+
+        try {
+            const response = await fetch("http://localhost:8080/company/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            if (response.ok) {
+                // If login is successful, redirect to the Home page
+                window.location.href = "Empolyer_homepage.html";
+            } else {
+                const errorData = await response.json();
+                alert(`Login failed: ${errorData.error || "Unknown error"}`);
+            }
+        } catch (error) {
+            console.error("Error logging in:", error);
+            alert("An error occurred while logging in.");
+        }
+    });
+
+    // Registration Form Submission
+    registerForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById("companyName").value;
+        const email = document.getElementById("companyRegisterEmail").value;
+        const password = document.getElementById("companyRegisterPassword").value;
+        const confirmPassword = document.getElementById("companyConfirmPassword").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:8080/company/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, email, password }),
+            });
+
+            if (response.ok) {
+                alert("Registration successful! Please log in.");
+                // After successful registration, switch to the login form
+                document.getElementById("show-login").click();
+            } else {
+                const errorData = await response.json();
+                alert(`Registration failed: ${errorData.error || "Unknown error"}`);
+            }
+        } catch (error) {
+            console.error("Error registering:", error);
+            alert("An error occurred while registering.");
+        }
+    });
+});
+    </script>
+</body>
+</html>

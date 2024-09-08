@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Job | Professional Job Application Platform</title>
+    <link rel="stylesheet" href="applyjob.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Free<span>Lax.</span></h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu();">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+              <!-- Teams Dropdown -->
+              <li class="dropdown">
+                  <a href="#services" class="dropbtn">Search</a>
+              </li>
+              <!-- Communities Dropdown -->
+              <li class="dropdown">
+                  <a href="#contact" class="dropbtn">Profile</a>
+              </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="job-application-container">
+        <section class="job-application-form">
+            <h2>Apply for Job</h2>
+            <form id="jobApplicationForm">
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" name="jobTitle" value="Frontend Developer" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="coverLetter">Cover Letter</label>
+                    <textarea id="coverLetter" name="coverLetter" placeholder="Write your cover letter" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="proposedBudget">Proposed Budget</label>
+                    <input type="number" id="proposedBudget" name="proposedBudget" placeholder="Enter your proposed budget" required>
+                </div>
+                <button type="submit" class="submit-btn">Apply Now</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="applyjob.js"></script>
+</body>
+</html>
